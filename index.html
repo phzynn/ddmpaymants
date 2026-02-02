@@ -1,210 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minhas Dívidas</title>
-
-<style>
-* { box-sizing: border-box; font-family: Arial, sans-serif; }
-
-body {
-  margin: 0;
-  background: linear-gradient(135deg, #f2d9ff, #e6ccff);
-}
-
-.container {
-  max-width: 420px;
-  margin: auto;
-  padding: 20px;
-}
-
-.card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.1);
-}
-
-.header {
-  text-align: center;
-  font-weight: bold;
-}
-
-.gradient-btn {
-  background: linear-gradient(90deg, #ff00cc, #7a00ff);
-  color: #fff;
-  border: none;
-  padding: 14px;
-  width: 100%;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.action-btn {
-  flex: 1;
-  padding: 12px;
-  border-radius: 20px;
-  border: none;
-  background: #eef;
-  cursor: pointer;
-}
-
-.hidden { display: none; }
-
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-content {
-  background: #fff;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 20px;
-  padding: 20px;
-}
-
-.option {
-  border: 1px solid #ddd;
-  padding: 12px;
-  border-radius: 12px;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-.option:hover {
-  background: #f5e8ff;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Universidade Unijorge Novo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+  <!-- TOPO -->
+  <header class="topo">
+    <h2>UNIVERSIDADE UNIJORGE NOVO</h2>
+    <p>Olá, <strong>PEDRO</strong>!</p>
+    <a href="#">Sair</a>
+  </header>
 
-  <div class="card header">
-    UNIVERSIDADE UNIJORGE NOVO<br><br>
-    Olá, <b>Pedro</b>
-  </div>
-
-  <button class="gradient-btn">Minhas dívidas</button>
-
-  <div class="card">
-    <p style="color:purple">● Dívida em aberto</p>
+  <!-- CARD DÍVIDA -->
+  <section class="card divida">
+    <p class="status">● Dívida em aberto</p>
     <h1>R$ 1.759,00</h1>
 
-    <div class="actions">
-      <button class="action-btn" onclick="abrirPix()">Pix</button>
-      <button class="action-btn" onclick="abrirCartao()">Cartão de crédito</button>
+    <div class="botoes">
+      <button onclick="mostrarPix()">Pix</button>
+      <button onclick="mostrarCartao()">Cartão de crédito</button>
     </div>
-  </div>
+  </section>
 
-  <button class="gradient-btn">Meus Acordos</button>
-
-  <div class="card">
-    <p><b>16619620</b> — Quitado — R$ 568,62</p>
-    <p><b>16617533</b> — Quitado — R$ 595,33</p>
-  </div>
-
-</div>
-
-<!-- MODAL PIX -->
-<div class="modal hidden" id="pixModal">
-  <div class="modal-content">
+  <!-- ================= PIX ================= -->
+  <section id="pixBox" class="card hidden">
     <h3>Negociação via Pix</h3>
+    <p>Escolha uma opção</p>
 
-    <div class="option" onclick="pixVista()">
-      À vista: <b>R$ 1.580,00</b> (10% desconto)
-    </div>
+    <label>
+      <input type="radio" name="pixOpcao" value="vista">
+      À vista: R$ 1.580,00 (10% desconto)
+    </label>
 
-    <div class="option" onclick="pixEntrada()">
+    <label>
+      <input type="radio" name="pixOpcao" value="entrada">
       Entrada R$ 300 + 3x de R$ 520
-    </div>
+    </label>
 
-    <div class="option" onclick="pixParcelado()">
+    <label>
+      <input type="radio" name="pixOpcao" value="semEntrada6">
       Sem entrada: 6x de R$ 315
+    </label>
+
+    <label>
+      <input type="radio" name="pixOpcao" value="semEntrada12">
+      12x de R$ 180 (juros)
+    </label>
+
+    <button class="gradient-btn" onclick="confirmarPix()">Confirmar Pix</button>
+    <button class="cancelar" onclick="fecharTudo()">Cancelar</button>
+  </section>
+
+  <!-- ================= CARTÃO ================= -->
+  <section id="cartaoBox" class="card hidden">
+
+    <!-- FORMULÁRIO -->
+    <div id="cartaoForm">
+      <h3>Pagamento com Cartão</h3>
+
+      <input type="text" placeholder="Número do cartão">
+      <input type="text" placeholder="Nome impresso no cartão">
+      <input type="text" placeholder="Validade (MM/AA)">
+      <input type="text" placeholder="CVV">
+
+      <button class="gradient-btn" onclick="continuarCartao()">Continuar</button>
+      <button class="cancelar" onclick="fecharTudo()">Cancelar</button>
     </div>
 
-    <button class="gradient-btn" onclick="fechar()">Cancelar</button>
-  </div>
-</div>
+    <!-- PARCELAS -->
+    <div id="cartaoParcelas" class="hidden">
+      <h3>Escolha as parcelas</h3>
 
-<!-- MODAL CARTÃO -->
-<div class="modal hidden" id="cartaoModal">
-  <div class="modal-content" id="cartaoStep1">
-    <h3>Pagamento com Cartão</h3>
-    <input placeholder="Número do cartão">
-    <input placeholder="Nome impresso">
-    <input placeholder="Validade">
-    <input placeholder="CVV">
-    <button class="gradient-btn" onclick="mostrarParcelas()">Continuar</button>
-    <button onclick="fechar()">Cancelar</button>
-  </div>
+      <button onclick="pagarCartao(1)">1x sem juros</button>
+      <button onclick="pagarCartao(3)">3x</button>
+      <button onclick="pagarCartao(6)">6x</button>
+      <button onclick="pagarCartao(12)">12x</button>
 
-  <div class="modal-content hidden" id="cartaoStep2">
-    <h3>Parcelamento</h3>
+      <button class="cancelar" onclick="fecharTudo()">Cancelar</button>
+    </div>
+  </section>
 
-    <div class="option">1x R$ 1.759,00 (sem juros)</div>
-    <div class="option">3x R$ 620,00</div>
-    <div class="option">6x R$ 330,00</div>
-    <div class="option">12x R$ 180,00</div>
+  <!-- ================= ACORDOS ================= -->
+  <section class="card">
+    <h3>Meus Acordos</h3>
 
-    <button class="gradient-btn">Pagar</button>
-    <button onclick="fechar()">Cancelar</button>
-  </div>
-</div>
+    <table>
+      <tr>
+        <th>Acordo</th>
+        <th>Status</th>
+        <th>Data</th>
+        <th>Total</th>
+      </tr>
+      <tr>
+        <td>16619620</td>
+        <td class="quitado">Quitado</td>
+        <td>02/12/2025</td>
+        <td>R$ 568,62</td>
+      </tr>
+      <tr>
+        <td>16617533</td>
+        <td class="quitado">Quitado</td>
+        <td>24/11/2025</td>
+        <td>R$ 595,33</td>
+      </tr>
+    </table>
+  </section>
 
-<script>
-function abrirPix() {
-  document.getElementById("pixModal").classList.remove("hidden");
-}
+  <script src="script.js"></script>
 
-function abrirCartao() {
-  document.getElementById("cartaoModal").classList.remove("hidden");
-}
+  <!-- CONTROLE DE TELAS -->
+  <script>
+    function mostrarPix() {
+      fecharTudo();
+      document.getElementById("pixBox").classList.remove("hidden");
+    }
 
-function fechar() {
-  document.querySelectorAll(".modal").forEach(m => m.classList.add("hidden"));
-  document.getElementById("cartaoStep1").classList.remove("hidden");
-  document.getElementById("cartaoStep2").classList.add("hidden");
-}
+    function mostrarCartao() {
+      fecharTudo();
+      document.getElementById("cartaoBox").classList.remove("hidden");
+    }
 
-function mostrarParcelas() {
-  document.getElementById("cartaoStep1").classList.add("hidden");
-  document.getElementById("cartaoStep2").classList.remove("hidden");
-}
-
-function pixVista() {
-  alert("Pix à vista selecionado");
-}
-
-function pixEntrada() {
-  alert("Pix com entrada selecionado");
-}
-
-function pixParcelado() {
-  alert("Pix parcelado selecionado");
-}
-</script>
+    function fecharTudo() {
+      document.getElementById("pixBox").classList.add("hidden");
+      document.getElementById("cartaoBox").classList.add("hidden");
+      document.getElementById("cartaoParcelas").classList.add("hidden");
+      document.getElementById("cartaoForm").classList.remove("hidden");
+    }
+  </script>
 
 </body>
 </html>
