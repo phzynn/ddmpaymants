@@ -1,114 +1,125 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 body {
-  margin: 0;
-  background: linear-gradient(135deg, #f6d4ff, #d9f1ff);
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6d7ff, #e6ddff);
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
-.container {
+.app {
+  width: 100%;
   max-width: 420px;
-  margin: auto;
-  padding: 16px;
 }
 
-.card {
-  background: rgba(255,255,255,0.55);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 16px;
-  margin-bottom: 18px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
+/* ===== HEADER ===== */
 .header {
+  background: #f4ebff;
+  border-radius: 18px;
+  padding: 20px;
   text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  margin-bottom: 18px;
 }
 
-.header h4 {
-  margin: 0;
+.header h1 {
   font-size: 14px;
   letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 
 .user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   font-size: 18px;
+  font-weight: 600;
+}
+
+.user img {
+  width: 26px;
 }
 
 .logout {
+  margin-top: 10px;
   font-size: 14px;
   color: #555;
 }
 
+/* ===== TITULOS ===== */
 .section-title {
-  background: linear-gradient(90deg, #ff00c8, #7a00ff);
+  background: linear-gradient(90deg, #ff00cc, #7a00ff);
   color: #fff;
-  text-align: center;
   padding: 14px;
-  border-radius: 999px;
+  border-radius: 30px;
+  text-align: center;
   font-weight: bold;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
-.debt-card {
+/* ===== CARD ===== */
+.card {
+  background: #f7f5ff;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.status {
+.label {
   color: #7a00ff;
   font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.value {
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+/* ===== BOTÕES ===== */
+.buttons {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 6px;
+  gap: 16px;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  background: #7a00ff;
-  border-radius: 50%;
-}
-
-.debt-card h1 {
-  margin: 14px 0;
-  font-size: 32px;
-}
-
-.pay-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-.btn {
+.pay-btn {
+  background: #e9f7ff;
   border: none;
+  border-radius: 25px;
   padding: 10px 22px;
-  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 600;
+  color: #0077ff;
   cursor: pointer;
 }
 
-.pix {
-  background: #e6f6ff;
-  color: #007aff;
+.pay-btn img {
+  width: 22px;
 }
 
-.credit {
-  background: #e6f6ff;
-  color: #007aff;
-}
-
-.table-card table {
+/* ===== TABELA ===== */
+table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 14px;
 }
 
 th {
   text-align: left;
-  padding-bottom: 8px;
+  padding-bottom: 10px;
 }
 
 td {
@@ -117,21 +128,28 @@ td {
 
 .ok {
   color: green;
-  font-weight: 600;
+  font-weight: bold;
 }
 
-.payment-logos {
+/* ===== MENU ===== */
+.menu {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 18px;
+}
+
+.menu div {
+  background: #fff;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
   display: flex;
   justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 10px;
+  align-items: center;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
 }
 
-.payment-logos img {
-  height: 28px;
-  background: #fff;
-  padding: 6px 10px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+.menu img {
+  width: 26px;
 }
+
