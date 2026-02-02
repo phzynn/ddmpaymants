@@ -1,11 +1,7 @@
-* {
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 body {
   margin: 0;
-  background: linear-gradient(135deg, #f2d9ff, #e6ccff);
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f3d9ff, #e6ccff);
 }
 
 .container {
@@ -14,87 +10,61 @@ body {
   padding: 20px;
 }
 
-.card {
-  background: #fff;
-  border-radius: 20px;
+.header {
+  background: #f7eaff;
   padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+  border-radius: 20px;
+  text-align: center;
 }
 
-.header {
+.btn-main {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #ff00cc, #7a00ff);
+  color: #fff;
   text-align: center;
   font-weight: bold;
 }
 
-.gradient-btn {
-  background: linear-gradient(90deg, #ff00cc, #7a00ff);
-  color: #fff;
-  border: none;
-  padding: 14px;
-  width: 100%;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
+.card {
+  background: #f9f9ff;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .actions {
   display: flex;
-  gap: 10px;
-  margin-top: 15px;
+  justify-content: space-around;
 }
 
-.action-btn {
-  flex: 1;
-  padding: 12px;
-  border-radius: 20px;
+.actions button {
   border: none;
-  background: #eef;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: #e0f4ff;
   cursor: pointer;
 }
 
-.action-btn:hover {
-  background: #ddd;
+.ok {
+  color: green;
+  font-weight: bold;
 }
 
-.hidden {
+/* MODAL */
+.overlay {
   display: none;
-}
-
-.modal {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,.5);
-  display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 999;
+  align-items: center;
 }
 
-.modal-content {
+.modal {
   background: #fff;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 20px;
   padding: 20px;
-}
-
-.option {
-  border: 1px solid #ddd;
-  padding: 12px;
-  border-radius: 12px;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-.option:hover {
-  background: #f5e8ff;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 350px;
 }
