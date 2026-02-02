@@ -3,70 +3,71 @@ const modal = document.getElementById("modal");
 const valor = 1759;
 
 function abrirPix() {
-  const valor = 1759;
-
-  const descontoAvista = (valor * 0.10).toFixed(2);
-  const valorAvista = (valor - descontoAvista).toFixed(2);
-
-  const entrada = (valor * 0.13).toFixed(2); // ~13% como faculdade
-  const restante = valor - entrada;
-
   modal.innerHTML = `
     <h2>Negociação via Pix</h2>
 
-    <div class="tabela-scroll">
-      <table class="tabela-pix">
+    <div style="overflow-x:auto">
+      <table style="min-width:600px; width:100%; font-size:14px; border-collapse:collapse">
         <thead>
           <tr>
-            <th>Selecionar</th>
-            <th>Forma<br>Pagamento Entrada</th>
-            <th>Entrada<br>Mínima</th>
+            <th>Forma Entrada</th>
+            <th>Entrada Mínima</th>
             <th>Desconto</th>
-            <th>Forma<br>Pagamento Parcelas</th>
-            <th>Nº de<br>Parcelas</th>
-            <th>Valor das<br>Parcelas</th>
+            <th>Forma Parcelas</th>
+            <th>Nº Parcelas</th>
+            <th>Valor das Parcelas</th>
           </tr>
         </thead>
-
         <tbody>
           <tr>
-            <td><input type="radio" name="pix"></td>
             <td>Pix</td>
-            <td>R$ 0,00</td>
-            <td>R$ ${descontoAvista}</td>
-            <td>Pix</td>
-            <td>1</td>
-            <td>R$ ${valorAvista}</td>
-          </tr>
-
-          <tr>
-            <td><input type="radio" name="pix"></td>
-            <td>Pix</td>
-            <td>R$ ${entrada}</td>
+            <td>R$ 615,65</td>
             <td>R$ 0,00</td>
             <td>Crédito</td>
             <td>1</td>
-            <td>R$ ${restante.toFixed(2)}</td>
+            <td>R$ 1.143,35</td>
           </tr>
-
           <tr>
-            <td><input type="radio" name="pix"></td>
             <td>Pix</td>
-            <td>R$ ${entrada}</td>
+            <td>R$ 615,65</td>
             <td>R$ 0,00</td>
             <td>Crédito</td>
             <td>2</td>
-            <td>R$ ${(restante / 2).toFixed(2)}</td>
+            <td>R$ 571,68</td>
           </tr>
-
           <tr>
-            <td><input type="radio" name="pix"></td>
             <td>Pix</td>
-            <td>R$ ${entrada}</td>
+            <td>R$ 615,65</td>
             <td>R$ 0,00</td>
             <td>Crédito</td>
             <td>3</td>
-            <td>R$ ${(restante / 3).toFixed(2)}</td>
+            <td>R$ 381,12</td>
+          </tr>
+
+          <tr>
+            <td>Pix</td>
+            <td>R$ 703,60</td>
+            <td>R$ 0,00</td>
+            <td>Boleto</td>
+            <td>1</td>
+            <td>R$ 1.055,40</td>
+          </tr>
+          <tr>
+            <td>Pix</td>
+            <td>R$ 703,60</td>
+            <td>R$ 0,00</td>
+            <td>Boleto</td>
+            <td>2</td>
+            <td>R$ 527,70</td>
+          </tr>
+
+          <tr>
+            <td>-</td>
+            <td>R$ 0,00</td>
+            <td>R$ 0,00</td>
+            <td>Pix</td>
+            <td>1</td>
+            <td><strong>R$ 1.759,00</strong></td>
           </tr>
         </tbody>
       </table>
@@ -75,7 +76,6 @@ function abrirPix() {
     <button onclick="confirmar()">Confirmar Pix</button>
     <button onclick="fechar()">Cancelar</button>
   `;
-
   overlay.style.display = "flex";
 }
 
