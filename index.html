@@ -2,85 +2,86 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minhas Dívidas</title>
+  <title>Dívida Faculdade</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="app">
+<div class="app">
 
-    <!-- HEADER -->
-    <div class="header">
-      <h1>UNIVERSIDADE UNIJORGE NOVO</h1>
+  <!-- DÍVIDA -->
+  <div class="card">
+    <p class="status">● Dívida em aberto</p>
+    <h1>R$ 1.759,00</h1>
 
-      <div class="user">
-        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png">
-        Olá, <strong>PEDRO</strong> !
-      </div>
+    <div class="buttons">
 
-      <div class="logout">Sair</div>
+      <!-- PIX -->
+      <label for="pix-toggle" class="pay-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Pix_logo.svg">
+        Pix
+      </label>
+
+      <!-- CARTÃO -->
+      <button class="pay-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Mastercard_2019_logo.svg">
+        Cartão de crédito
+      </button>
+
     </div>
-
-    <!-- MINHAS DÍVIDAS -->
-    <div class="section-title">Minhas dívidas</div>
-
-    <div class="card">
-      <div class="label">● Dívida em aberto</div>
-      <div class="value">R$ 1.759,00</div>
-
-      <div class="buttons">
-        <button class="pay-btn">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Pix_logo.svg">
-          Pix
-        </button>
-
-        <button class="pay-btn">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Mastercard_2019_logo.svg">
-          Crédito
-        </button>
-      </div>
-    </div>
-
-    <!-- MEUS ACORDOS -->
-    <div class="section-title">Meus Acordos</div>
-
-    <div class="card">
-      <table>
-        <tr>
-          <th>Acordo</th>
-          <th>Status</th>
-          <th>Data</th>
-          <th>Total</th>
-        </tr>
-        <tr>
-          <td>16619620</td>
-          <td class="ok">Quitado</td>
-          <td>02/12/2025</td>
-          <td>568,62</td>
-        </tr>
-        <tr>
-          <td>16617533</td>
-          <td class="ok">Quitado</td>
-          <td>24/11/2025</td>
-          <td>595,33</td>
-        </tr>
-      </table>
-    </div>
-
-    <!-- MENU INFERIOR -->
-    <div class="menu">
-      <div><img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png"></div>
-      <div><img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png"></div>
-      <div><img src="https://cdn-icons-png.flaticon.com/512/3135/3135673.png"></div>
-      <div><img src="https://cdn-icons-png.flaticon.com/512/839/839860.png"></div>
-      <div><img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"></div>
-    </div>
-
   </div>
+
+  <!-- CHECKBOX CONTROLADOR -->
+  <input type="checkbox" id="pix-toggle">
+
+  <!-- PROPOSTA PIX -->
+  <div class="proposal">
+    <h2>Proposta de Acordo (Pix)</h2>
+
+    <p class="subtitle">Escolha a entrada</p>
+
+    <div class="options">
+      <label>
+        <input type="radio" name="entrada">
+        Entrada R$ 300,00
+      </label>
+
+      <label>
+        <input type="radio" name="entrada">
+        Entrada R$ 500,00
+      </label>
+
+      <label>
+        <input type="radio" name="entrada">
+        Sem entrada
+      </label>
+    </div>
+
+    <p class="subtitle">Parcelamento</p>
+
+    <div class="options">
+      <label>
+        <input type="radio" name="parcelas">
+        3x de R$ 530,00
+      </label>
+
+      <label>
+        <input type="radio" name="parcelas">
+        6x de R$ 290,00
+      </label>
+
+      <label>
+        <input type="radio" name="parcelas">
+        12x de R$ 165,00
+      </label>
+    </div>
+
+    <button class="confirm">Confirmar proposta</button>
+
+    <label for="pix-toggle" class="cancel">Cancelar</label>
+  </div>
+
+</div>
 
 </body>
 </html>
-
-
-
