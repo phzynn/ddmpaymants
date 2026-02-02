@@ -1,86 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Dívida Faculdade</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Minhas Dívidas</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="app">
+<div class="container">
+
+  <!-- TOPO -->
+  <div class="top-card">
+    <h3>UNIVERSIDADE UNIJORGE NOVO</h3>
+    <p class="user">👤 Olá, <strong>PEDRO</strong>!</p>
+    <span class="logout">Sair</span>
+  </div>
 
   <!-- DÍVIDA -->
   <div class="card">
-    <p class="status">● Dívida em aberto</p>
+    <span class="dot">● Dívida em aberto</span>
     <h1>R$ 1.759,00</h1>
 
-    <div class="buttons">
-
-      <!-- PIX -->
-      <label for="pix-toggle" class="pay-btn">
+    <div class="actions">
+      <label for="pix-open" class="btn">
         <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Pix_logo.svg">
         Pix
       </label>
 
-      <!-- CARTÃO -->
-      <button class="pay-btn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Mastercard_2019_logo.svg">
-        Cartão de crédito
-      </button>
-
+      <label for="card-open" class="btn">
+        💳 Cartão de crédito
+      </label>
     </div>
   </div>
 
-  <!-- CHECKBOX CONTROLADOR -->
-  <input type="checkbox" id="pix-toggle">
+</div>
 
-  <!-- PROPOSTA PIX -->
-  <div class="proposal">
-    <h2>Proposta de Acordo (Pix)</h2>
+<!-- CONTROLES -->
+<input type="checkbox" id="pix-open">
+<input type="checkbox" id="card-open">
 
-    <p class="subtitle">Escolha a entrada</p>
+<!-- PIX MODAL -->
+<div class="modal pix-modal">
+  <div class="modal-box">
+    <h2>Negociação via Pix</h2>
 
-    <div class="options">
-      <label>
-        <input type="radio" name="entrada">
-        Entrada R$ 300,00
-      </label>
+    <p class="section">Escolha uma opção</p>
 
-      <label>
-        <input type="radio" name="entrada">
-        Entrada R$ 500,00
-      </label>
+    <label class="option">
+      <input type="radio" name="pix">
+      À vista: <strong>R$ 1.580,00</strong> (10% desconto)
+    </label>
 
-      <label>
-        <input type="radio" name="entrada">
-        Sem entrada
-      </label>
-    </div>
+    <label class="option">
+      <input type="radio" name="pix">
+      Entrada R$ 300 + 3x de R$ 520
+    </label>
 
-    <p class="subtitle">Parcelamento</p>
+    <label class="option">
+      <input type="radio" name="pix">
+      Sem entrada: 6x de R$ 315
+    </label>
 
-    <div class="options">
-      <label>
-        <input type="radio" name="parcelas">
-        3x de R$ 530,00
-      </label>
+    <label class="option">
+      <input type="radio" name="pix">
+      12x de R$ 180 (juros)
+    </label>
 
-      <label>
-        <input type="radio" name="parcelas">
-        6x de R$ 290,00
-      </label>
-
-      <label>
-        <input type="radio" name="parcelas">
-        12x de R$ 165,00
-      </label>
-    </div>
-
-    <button class="confirm">Confirmar proposta</button>
-
-    <label for="pix-toggle" class="cancel">Cancelar</label>
+    <button class="confirm">Confirmar Pix</button>
+    <label for="pix-open" class="close">Cancelar</label>
   </div>
+</div>
 
+<!-- CARTÃO MODAL -->
+<div class="modal card-modal">
+  <div class="modal-box">
+    <h2>Pagamento com Cartão</h2>
+
+    <input type="text" placeholder="Número do cartão">
+    <input type="text" placeholder="Nome impresso no cartão">
+
+    <div class="row">
+      <input type="text" placeholder="Validade">
+      <input type="text" placeholder="CVV">
+    </div>
+
+    <select>
+      <option>1x de R$ 1.759,00</option>
+      <option>3x de R$ 620,00</option>
+      <option>6x de R$ 330,00</option>
+      <option>12x de R$ 190,00</option>
+    </select>
+
+    <button class="confirm">Pagar com cartão</button>
+    <label for="card-open" class="close">Cancelar</label>
+  </div>
 </div>
 
 </body>
