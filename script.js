@@ -5,19 +5,20 @@ const valor = 1759;
 function abrirPix() {
   const valor = 1759;
 
+  // cálculos baseados no valor
+  const entradaCredito = (valor * 0.13).toFixed(2); // ~13% de entrada
+  const avista = (valor * 0.90).toFixed(2); // 10% desconto
+  const credito1 = (valor / 1).toFixed(2);
+  const credito2 = (valor / 2).toFixed(2);
+  const credito3 = (valor / 3).toFixed(2);
+
   modal.innerHTML = `
     <h2>Negociação via Pix</h2>
 
-    <div class="pix-filtros">
-      <label><input type="radio" name="filtro" checked> Todos</label>
-      <label><input type="radio" name="filtro"> Com Entrada</label>
-      <label><input type="radio" name="filtro"> Sem Entrada</label>
-    </div>
-
-    <table class="pix-table">
-      <thead>
+    <div class="tabela-scroll">
+      <table class="tabela-pix">
         <tr>
-          <th>Selecionar</th>
+          <th></th>
           <th>Forma Entrada</th>
           <th>Entrada Mínima</th>
           <th>Desconto</th>
@@ -25,61 +26,50 @@ function abrirPix() {
           <th>Nº Parcelas</th>
           <th>Valor Parcela</th>
         </tr>
-      </thead>
-      <tbody>
+
         <tr>
           <td><input type="radio" name="pix"></td>
           <td>Pix</td>
-          <td>R$ 222,08</td>
           <td>R$ 0,00</td>
-          <td>Crédito</td>
+          <td>R$ ${(valor - avista).toFixed(2)}</td>
+          <td>Pix</td>
           <td>1</td>
-          <td>R$ ${( (valor - 222.08) ).toFixed(2)}</td>
+          <td>R$ ${avista}</td>
         </tr>
 
         <tr>
           <td><input type="radio" name="pix"></td>
           <td>Pix</td>
-          <td>R$ 222,08</td>
+          <td>R$ ${entradaCredito}</td>
+          <td>R$ 0,00</td>
+          <td>Crédito</td>
+          <td>1</td>
+          <td>R$ ${(valor - entradaCredito).toFixed(2)}</td>
+        </tr>
+
+        <tr>
+          <td><input type="radio" name="pix"></td>
+          <td>Pix</td>
+          <td>R$ ${entradaCredito}</td>
           <td>R$ 0,00</td>
           <td>Crédito</td>
           <td>2</td>
-          <td>R$ ${( (valor - 222.08) / 2 ).toFixed(2)}</td>
+          <td>R$ ${( (valor - entradaCredito) / 2 ).toFixed(2)}</td>
         </tr>
 
         <tr>
           <td><input type="radio" name="pix"></td>
           <td>Pix</td>
-          <td>R$ 222,08</td>
+          <td>R$ ${entradaCredito}</td>
           <td>R$ 0,00</td>
           <td>Crédito</td>
           <td>3</td>
-          <td>R$ ${( (valor - 222.08) / 3 ).toFixed(2)}</td>
+          <td>R$ ${( (valor - entradaCredito) / 3 ).toFixed(2)}</td>
         </tr>
+      </table>
+    </div>
 
-        <tr>
-          <td><input type="radio" name="pix"></td>
-          <td>Pix</td>
-          <td>R$ 253,81</td>
-          <td>R$ 0,00</td>
-          <td>Boleto</td>
-          <td>1</td>
-          <td>R$ ${( (valor - 253.81) ).toFixed(2)}</td>
-        </tr>
-
-        <tr>
-          <td><input type="radio" name="pix"></td>
-          <td>-</td>
-          <td>R$ 0,00</td>
-          <td>R$ 0,00</td>
-          <td>Pix</td>
-          <td>1</td>
-          <td>R$ ${valor.toFixed(2)}</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <button onclick="confirmar()">Confirmar</button>
+    <button onclick="confirmar()">Confirmar Pix</button>
     <button onclick="fechar()">Cancelar</button>
   `;
 
