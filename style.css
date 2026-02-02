@@ -1,77 +1,80 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f7c7ff, #d6c8ff, #c7f1ff);
+  margin: 0;
+  background: linear-gradient(135deg, #f6d4ff, #d9f1ff);
 }
 
-.app {
-  max-width: 380px;
-  margin: 0 auto;
-  padding: 20px;
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 16px;
 }
 
-/* HEADER */
-.header-card {
-  background: rgba(255,255,255,0.45);
+.card {
+  background: rgba(255,255,255,0.55);
   backdrop-filter: blur(12px);
-  border-radius: 22px;
-  padding: 20px;
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.header {
   text-align: center;
 }
 
-.uni {
-  font-size: 12px;
+.header h4 {
+  margin: 0;
+  font-size: 14px;
   letter-spacing: 1px;
-  opacity: .8;
 }
 
 .user {
-  margin: 10px 0;
   font-size: 18px;
 }
 
 .logout {
   font-size: 14px;
-  opacity: .7;
+  color: #555;
 }
 
-/* BOTÕES GRANDES */
-.btn-main {
-  width: 100%;
-  margin: 18px 0;
+.section-title {
+  background: linear-gradient(90deg, #ff00c8, #7a00ff);
+  color: #fff;
+  text-align: center;
   padding: 14px;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
-  background: linear-gradient(90deg, #ff00cc, #7a00ff);
-  box-shadow: 0 8px 18px rgba(0,0,0,.15);
+  border-radius: 999px;
+  font-weight: bold;
+  margin-bottom: 12px;
 }
 
-/* DÍVIDA */
 .debt-card {
-  background: rgba(255,255,255,0.35);
-  backdrop-filter: blur(14px);
-  border-radius: 22px;
-  padding: 20px;
   text-align: center;
 }
 
 .status {
-  font-size: 14px;
-  color: #a000ff;
+  color: #7a00ff;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
 }
 
-.price {
-  margin: 15px 0;
-  font-size: 26px;
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #7a00ff;
+  border-radius: 50%;
+}
+
+.debt-card h1 {
+  margin: 14px 0;
+  font-size: 32px;
 }
 
 .pay-buttons {
@@ -80,52 +83,55 @@ body {
   gap: 12px;
 }
 
-.pay {
-  padding: 8px 16px;
-  border-radius: 20px;
+.btn {
   border: none;
-  font-size: 13px;
+  padding: 10px 22px;
+  border-radius: 999px;
   font-weight: 600;
-  background: rgba(255,255,255,.7);
+  cursor: pointer;
 }
 
-/* TABELA */
-.table-card {
-  background: rgba(255,255,255,.6);
-  backdrop-filter: blur(12px);
-  border-radius: 18px;
-  padding: 14px;
+.pix {
+  background: #e6f6ff;
+  color: #007aff;
 }
 
-.row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  font-size: 13px;
-  padding: 6px 0;
+.credit {
+  background: #e6f6ff;
+  color: #007aff;
 }
 
-.header {
-  font-weight: bold;
-  opacity: .7;
+.table-card table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.row + .row {
-  border-top: 1px solid rgba(0,0,0,.08);
+th {
+  text-align: left;
+  padding-bottom: 8px;
 }
 
-/* BANDEIRAS */
-.flags {
+td {
+  padding: 8px 0;
+}
+
+.ok {
+  color: green;
+  font-weight: 600;
+}
+
+.payment-logos {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 12px;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
-.flag {
-  font-size: 11px;
+.payment-logos img {
+  height: 28px;
+  background: #fff;
   padding: 6px 10px;
   border-radius: 12px;
-  background: white;
-  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
