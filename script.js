@@ -6,76 +6,46 @@ function abrirPix() {
   modal.innerHTML = `
     <h2>Negociação via Pix</h2>
 
-    <div style="overflow-x:auto">
-      <table style="min-width:600px; width:100%; font-size:14px; border-collapse:collapse">
-        <thead>
-          <tr>
-            <th>Forma Entrada</th>
-            <th>Entrada Mínima</th>
-            <th>Desconto</th>
-            <th>Forma Parcelas</th>
-            <th>Nº Parcelas</th>
-            <th>Valor das Parcelas</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Pix</td>
-            <td>R$ 615,65</td>
-            <td>R$ 0,00</td>
-            <td>Crédito</td>
-            <td>1</td>
-            <td>R$ 1.143,35</td>
-          </tr>
-          <tr>
-            <td>Pix</td>
-            <td>R$ 615,65</td>
-            <td>R$ 0,00</td>
-            <td>Crédito</td>
-            <td>2</td>
-            <td>R$ 571,68</td>
-          </tr>
-          <tr>
-            <td>Pix</td>
-            <td>R$ 615,65</td>
-            <td>R$ 0,00</td>
-            <td>Crédito</td>
-            <td>3</td>
-            <td>R$ 381,12</td>
-          </tr>
+    <div class="option">
+      <input type="radio" name="pix">
+      Pix · Entrada R$ 0,00 · 1x Pix<br>
+      <strong>R$ 1.759,00</strong>
+    </div>
 
-          <tr>
-            <td>Pix</td>
-            <td>R$ 703,60</td>
-            <td>R$ 0,00</td>
-            <td>Boleto</td>
-            <td>1</td>
-            <td>R$ 1.055,40</td>
-          </tr>
-          <tr>
-            <td>Pix</td>
-            <td>R$ 703,60</td>
-            <td>R$ 0,00</td>
-            <td>Boleto</td>
-            <td>2</td>
-            <td>R$ 527,70</td>
-          </tr>
+    <div class="option">
+      <input type="radio" name="pix">
+      Pix · Entrada R$ 615,65 · Crédito 1x<br>
+      <strong>R$ 1.143,35</strong>
+    </div>
 
-          <tr>
-            <td>-</td>
-            <td>R$ 0,00</td>
-            <td>R$ 0,00</td>
-            <td>Pix</td>
-            <td>1</td>
-            <td><strong>R$ 1.759,00</strong></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="option">
+      <input type="radio" name="pix">
+      Pix · Entrada R$ 615,65 · Crédito 2x<br>
+      <strong>2x de R$ 571,68</strong>
+    </div>
+
+    <div class="option">
+      <input type="radio" name="pix">
+      Pix · Entrada R$ 615,65 · Crédito 3x<br>
+      <strong>3x de R$ 381,12</strong>
+    </div>
+
+    <div class="option">
+      <input type="radio" name="pix">
+      Pix · Entrada R$ 703,60 · Boleto 1x<br>
+      <strong>R$ 1.055,40</strong>
+    </div>
+
+    <div class="option">
+      <input type="radio" name="pix">
+      Pix · Entrada R$ 703,60 · Boleto 2x<br>
+      <strong>2x de R$ 527,70</strong>
     </div>
 
     <button onclick="confirmar()">Confirmar Pix</button>
     <button onclick="fechar()">Cancelar</button>
   `;
+
   overlay.style.display = "flex";
 }
 
