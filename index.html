@@ -1,49 +1,89 @@
-HTML
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Minhas Dívidas</title>
+  <title>Portal - Mockup</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="bg"></div>
 
-  <div class="container">
-    <h2>Olá, Pedro!</h2>
+  <main class="wrap">
+    <header class="topo">
+      <p class="uni">UNIVERSIDADE UNIJORGE NOVO</p>
+      <div class="user">
+        <span class="icon">👤</span>
+        <strong>Olá, PEDRO !</strong>
+      </div>
+      <div class="divider"></div>
+      <a class="sair" href="#">Sair</a>
+    </header>
 
-    <button class="btn">Minhas dívidas</button>
+    <button class="btn-grad">Minhas dívidas</button>
 
     <div class="card green">
-      <p>Dívida em aberto:</p>
+      <p>Dívida em aberto</p>
       <strong>R$ 1.759,00</strong>
     </div>
 
-    <button class="btn" onclick="mostrarPagamento()">Pagar dívida</button>
+    <button class="btn-grad" onclick="togglePagamento()">Pagar dívida</button>
 
-    <div id="pagamento" class="hidden">
+    <section id="pagamento" class="hidden pay">
       <h3>Forma de pagamento</h3>
-      <button class="btn branco" onclick="mostrarPix()">Pix</button>
-      <button class="btn branco">Crédito</button>
+      <div class="pay-buttons">
+        <button class="btn-white" onclick="showPix()">Pix</button>
+        <button class="btn-white">Crédito</button>
+      </div>
+
+      <div id="pix" class="hidden pix-box">
+        <h4>Opções no Pix</h4>
+        <div class="pix-row">À vista — <b>R$ 1.759,00</b></div>
+        <div class="pix-row">Entrada + 2x — <b>R$ 879,50</b></div>
+        <div class="pix-row">Entrada + 3x — <b>R$ 586,33</b></div>
+      </div>
+    </section>
+
+    <button class="btn-grad small">Meus Acordos</button>
+
+    <div class="table">
+      <div class="thead">
+        <span>Acordo</span>
+        <span>Status</span>
+        <span>Data</span>
+        <span>Total</span>
+      </div>
+      <div class="trow">
+        <span>16619620</span>
+        <span>Quitado</span>
+        <span>02/12/2025</span>
+        <span>568,62</span>
+      </div>
+      <div class="trow">
+        <span>16617533</span>
+        <span>Quitado</span>
+        <span>24/11/2025</span>
+        <span>595,33</span>
+      </div>
     </div>
 
-    <div id="pix" class="hidden pix-box">
-      <h4>Opções no Pix</h4>
-      <div class="pix-option">À vista - R$ 1.759,00</div>
-      <div class="pix-option">Entrada + 2x</div>
-      <div class="pix-option">Entrada + 3x</div>
+    <div class="cards">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="visa">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="master">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo_%282018%29.svg" alt="amex">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Elo_logo.svg" alt="elo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Diners_Club_Logo.svg" alt="diners">
     </div>
-  </div>
+  </main>
 
   <script>
-    function mostrarPagamento() {
-      document.getElementById("pagamento").classList.remove("hidden");
+    function togglePagamento(){
+      document.getElementById('pagamento').classList.toggle('hidden');
     }
-
-    function mostrarPix() {
-      document.getElementById("pix").classList.remove("hidden");
+    function showPix(){
+      document.getElementById('pix').classList.toggle('hidden');
     }
   </script>
-
 </body>
 </html>
+
