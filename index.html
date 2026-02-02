@@ -8,72 +8,79 @@
 </head>
 <body>
 
-  <div class="container">
+  <div class="app">
 
-    <div class="card header">
-      <h4>UNIVERSIDADE UNIJORGE NOVO</h4>
-      <p class="user">👤 Olá, <strong>PEDRO</strong> !</p>
-      <hr>
-      <span class="logout">Sair</span>
+    <!-- HEADER -->
+    <div class="header">
+      <h1>UNIVERSIDADE UNIJORGE NOVO</h1>
+
+      <div class="user">
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png">
+        Olá, <strong>PEDRO</strong> !
+      </div>
+
+      <div class="logout">Sair</div>
     </div>
 
+    <!-- MINHAS DÍVIDAS -->
     <div class="section-title">Minhas dívidas</div>
 
-    <div class="card debt-card">
-      <span class="status">
-        <span class="dot"></span>
-        Dívida em aberto
-      </span>
+    <div class="card">
+      <div class="label">● Dívida em aberto</div>
+      <div class="value">R$ 1.759,00</div>
 
-      <h1>R$ 1.759,00</h1>
+      <div class="buttons">
+        <button class="pay-btn">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Pix_logo.svg">
+          Pix
+        </button>
 
-      <div class="pay-buttons">
-        <button class="btn pix">Pix</button>
-        <button class="btn credit">Crédito</button>
+        <button class="pay-btn">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Mastercard_2019_logo.svg">
+          Crédito
+        </button>
       </div>
     </div>
 
+    <!-- MEUS ACORDOS -->
     <div class="section-title">Meus Acordos</div>
 
-    <div class="card table-card">
+    <div class="card">
       <table>
-        <thead>
-          <tr>
-            <th>Acordo</th>
-            <th>Status</th>
-            <th>Data</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>16619620</td>
-            <td class="ok">Quitado</td>
-            <td>02/12/2025</td>
-            <td>568,62</td>
-          </tr>
-          <tr>
-            <td>16617533</td>
-            <td class="ok">Quitado</td>
-            <td>24/11/2025</td>
-            <td>595,33</td>
-          </tr>
-        </tbody>
+        <tr>
+          <th>Acordo</th>
+          <th>Status</th>
+          <th>Data</th>
+          <th>Total</th>
+        </tr>
+        <tr>
+          <td>16619620</td>
+          <td class="ok">Quitado</td>
+          <td>02/12/2025</td>
+          <td>568,62</td>
+        </tr>
+        <tr>
+          <td>16617533</td>
+          <td class="ok">Quitado</td>
+          <td>24/11/2025</td>
+          <td>595,33</td>
+        </tr>
       </table>
     </div>
 
-    <!-- LOGOS -->
-    <div class="payment-logos">
-      <img src="img/visa.png" alt="Visa">
-      <img src="img/mastercard.png" alt="Mastercard">
-      <img src="img/amex.png" alt="Amex">
-      <img src="img/diners.png" alt="Diners">
-      <img src="img/boleto.png" alt="Boleto">
+    <!-- MENU INFERIOR -->
+    <div class="menu">
+      <div><img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png"></div>
+      <div><img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png"></div>
+      <div><img src="https://cdn-icons-png.flaticon.com/512/3135/3135673.png"></div>
+      <div><img src="https://cdn-icons-png.flaticon.com/512/839/839860.png"></div>
+      <div><img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"></div>
     </div>
 
   </div>
 
 </body>
 </html>
+
 
 
