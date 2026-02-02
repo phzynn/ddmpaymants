@@ -2,67 +2,73 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Minhas Dívidas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minhas Dívidas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="app">
+<div class="container">
 
-    <header class="header">
-      <h2>UNIVERSIDADE UNIJORGE NOVO</h2>
-      <p>Olá, <strong>PEDRO</strong>!</p>
-      <span class="sair">Sair</span>
-    </header>
-
-    <div class="titulo">Minhas dívidas</div>
-
-    <div class="card">
-      <p class="status">● Dívida em aberto</p>
-      <h1>R$ 1.759,00</h1>
-
-      <div class="botoes">
-        <button class="btn" onclick="abrirPix()">Pix</button>
-        <button class="btn" onclick="abrirCartao()">Cartão de crédito</button>
-      </div>
+  <!-- Header -->
+  <div class="card header">
+    <h1>UNIVERSIDADE UNIJORGE NOVO</h1>
+    <div class="user">
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+      <span>Olá, <strong>PEDRO</strong>!</span>
     </div>
-
-    <div class="titulo">Meus acordos</div>
-
-    <div class="card">
-      <table>
-        <tr>
-          <th>Acordo</th>
-          <th>Status</th>
-          <th>Data</th>
-          <th>Total</th>
-        </tr>
-        <tr>
-          <td>16619620</td>
-          <td class="quitado">Quitado</td>
-          <td>02/12/2025</td>
-          <td>568,62</td>
-        </tr>
-        <tr>
-          <td>16617533</td>
-          <td class="quitado">Quitado</td>
-          <td>24/11/2025</td>
-          <td>595,33</td>
-        </tr>
-      </table>
-    </div>
-
+    <a href="#" class="logout">Sair</a>
   </div>
 
-  <!-- MODAL -->
-  ...
-<div id="overlay">
-  <div id="modalContent"></div>
+  <!-- Minhas dívidas -->
+  <div class="section-title">Minhas dívidas</div>
+
+  <div class="card debt">
+    <p class="status">● Dívida em aberto</p>
+    <h2>R$ 1.759,00</h2>
+
+    <div class="buttons">
+      <button class="btn light" id="btnPix">Pix</button>
+      <button class="btn light" id="btnCredito">Crédito</button>
+    </div>
+  </div>
+
+  <!-- Meus acordos -->
+  <div class="section-title">Meus Acordos</div>
+
+  <div class="card table">
+    <div class="row header-row">
+      <span>Acordo</span>
+      <span>Status</span>
+      <span>Data</span>
+      <span>Total</span>
+    </div>
+
+    <div class="row">
+      <span>16619620</span>
+      <span class="paid">Quitado</span>
+      <span>02/12/2025</span>
+      <span>568,62</span>
+    </div>
+
+    <div class="row">
+      <span>16617533</span>
+      <span class="paid">Quitado</span>
+      <span>24/11/2025</span>
+      <span>595,33</span>
+    </div>
+  </div>
+
+  <!-- Bottom menu -->
+  <div class="menu">
+    <div class="menu-item">🏠</div>
+    <div class="menu-item">📝</div>
+    <div class="menu-item">💰</div>
+    <div class="menu-item">📋</div>
+    <div class="menu-item">👤</div>
+  </div>
+
 </div>
 
-<script src="./script.js"></script>
 </body>
 </html>
-
-
