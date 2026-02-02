@@ -1,98 +1,118 @@
 * {
-  box-sizing: border-box;
   font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-  background: linear-gradient(135deg, #f3d9ff, #e9e0ff);
-  display: flex;
-  justify-content: center;
-  padding: 40px 0;
+  margin: 0;
+  background: linear-gradient(135deg, #f2d6ff, #e9e4ff);
 }
 
-.app {
-  width: 360px;
+.container {
+  max-width: 380px;
+  margin: auto;
+  padding: 20px;
 }
 
-/* CARD */
-.card {
-  background: #f7f7ff;
+.top-card {
+  background: #f6ebff;
   border-radius: 20px;
-  padding: 25px;
+  padding: 20px;
   text-align: center;
 }
 
-.status {
+.card {
+  background: #f8f8ff;
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.dot {
   color: purple;
   font-weight: bold;
 }
 
-h1 {
-  margin: 15px 0;
-}
-
-.buttons {
+.actions {
   display: flex;
-  gap: 10px;
   justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
 }
 
-.pay-btn {
-  background: #e8f7ff;
-  border-radius: 15px;
+.btn {
+  background: #eaf6ff;
   padding: 10px 15px;
-  border: none;
+  border-radius: 15px;
   display: flex;
-  align-items: center;
   gap: 8px;
+  align-items: center;
   cursor: pointer;
 }
 
-.pay-btn img {
-  width: 24px;
+.btn img {
+  width: 22px;
 }
 
-/* ESCONDE INPUT */
-#pix-toggle {
+input[type="checkbox"] {
   display: none;
 }
 
-/* PROPOSTA */
-.proposal {
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
   display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#pix-open:checked ~ .pix-modal,
+#card-open:checked ~ .card-modal {
+  display: flex;
+}
+
+.modal-box {
   background: #fff;
-  margin-top: 20px;
+  width: 90%;
+  max-width: 350px;
   padding: 20px;
   border-radius: 20px;
 }
 
-#pix-toggle:checked ~ .proposal {
-  display: block;
-}
-
-.subtitle {
-  margin-top: 15px;
+.section {
+  margin: 15px 0 5px;
   font-weight: bold;
 }
 
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.options label {
-  background: #f2f2ff;
+.option {
+  display: block;
+  background: #f3f3ff;
   padding: 10px;
   border-radius: 12px;
-  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.modal input,
+.modal select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
 }
 
 .confirm {
   width: 100%;
-  margin-top: 20px;
   padding: 12px;
+  margin-top: 15px;
   border: none;
   border-radius: 20px;
   background: linear-gradient(to right, #ff00cc, #7a00ff);
@@ -100,10 +120,10 @@ h1 {
   font-size: 16px;
 }
 
-.cancel {
+.close {
   display: block;
-  margin-top: 10px;
   text-align: center;
-  color: #888;
+  margin-top: 10px;
+  color: #777;
   cursor: pointer;
 }
