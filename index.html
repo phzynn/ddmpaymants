@@ -2,99 +2,209 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Minhas Dívidas</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+* { box-sizing: border-box; font-family: Arial, sans-serif; }
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #f2d9ff, #e6ccff);
+}
+
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+.header {
+  text-align: center;
+  font-weight: bold;
+}
+
+.gradient-btn {
+  background: linear-gradient(90deg, #ff00cc, #7a00ff);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  background: #eef;
+  cursor: pointer;
+}
+
+.hidden { display: none; }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.option {
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #f5e8ff;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+</style>
 </head>
+
 <body>
 
 <div class="container">
 
-  <!-- TOPO -->
-  <div class="top-card">
-    <h3>UNIVERSIDADE UNIJORGE NOVO</h3>
-    <p class="user">👤 Olá, <strong>PEDRO</strong>!</p>
-    <span class="logout">Sair</span>
+  <div class="card header">
+    UNIVERSIDADE UNIJORGE NOVO<br><br>
+    Olá, <b>Pedro</b>
   </div>
 
-  <!-- DÍVIDA -->
+  <button class="gradient-btn">Minhas dívidas</button>
+
   <div class="card">
-    <span class="dot">● Dívida em aberto</span>
+    <p style="color:purple">● Dívida em aberto</p>
     <h1>R$ 1.759,00</h1>
 
     <div class="actions">
-      <label for="pix-open" class="btn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Pix_logo.svg">
-        Pix
-      </label>
-
-      <label for="card-open" class="btn">
-        💳 Cartão de crédito
-      </label>
+      <button class="action-btn" onclick="abrirPix()">Pix</button>
+      <button class="action-btn" onclick="abrirCartao()">Cartão de crédito</button>
     </div>
+  </div>
+
+  <button class="gradient-btn">Meus Acordos</button>
+
+  <div class="card">
+    <p><b>16619620</b> — Quitado — R$ 568,62</p>
+    <p><b>16617533</b> — Quitado — R$ 595,33</p>
   </div>
 
 </div>
 
-<!-- CONTROLES -->
-<input type="checkbox" id="pix-open">
-<input type="checkbox" id="card-open">
+<!-- MODAL PIX -->
+<div class="modal hidden" id="pixModal">
+  <div class="modal-content">
+    <h3>Negociação via Pix</h3>
 
-<!-- PIX MODAL -->
-<div class="modal pix-modal">
-  <div class="modal-box">
-    <h2>Negociação via Pix</h2>
+    <div class="option" onclick="pixVista()">
+      À vista: <b>R$ 1.580,00</b> (10% desconto)
+    </div>
 
-    <p class="section">Escolha uma opção</p>
-
-    <label class="option">
-      <input type="radio" name="pix">
-      À vista: <strong>R$ 1.580,00</strong> (10% desconto)
-    </label>
-
-    <label class="option">
-      <input type="radio" name="pix">
+    <div class="option" onclick="pixEntrada()">
       Entrada R$ 300 + 3x de R$ 520
-    </label>
-
-    <label class="option">
-      <input type="radio" name="pix">
-      Sem entrada: 6x de R$ 315
-    </label>
-
-    <label class="option">
-      <input type="radio" name="pix">
-      12x de R$ 180 (juros)
-    </label>
-
-    <button class="confirm">Confirmar Pix</button>
-    <label for="pix-open" class="close">Cancelar</label>
-  </div>
-</div>
-
-<!-- CARTÃO MODAL -->
-<div class="modal card-modal">
-  <div class="modal-box">
-    <h2>Pagamento com Cartão</h2>
-
-    <input type="text" placeholder="Número do cartão">
-    <input type="text" placeholder="Nome impresso no cartão">
-
-    <div class="row">
-      <input type="text" placeholder="Validade">
-      <input type="text" placeholder="CVV">
     </div>
 
-    <select>
-      <option>1x de R$ 1.759,00</option>
-      <option>3x de R$ 620,00</option>
-      <option>6x de R$ 330,00</option>
-      <option>12x de R$ 190,00</option>
-    </select>
+    <div class="option" onclick="pixParcelado()">
+      Sem entrada: 6x de R$ 315
+    </div>
 
-    <button class="confirm">Pagar com cartão</button>
-    <label for="card-open" class="close">Cancelar</label>
+    <button class="gradient-btn" onclick="fechar()">Cancelar</button>
   </div>
 </div>
+
+<!-- MODAL CARTÃO -->
+<div class="modal hidden" id="cartaoModal">
+  <div class="modal-content" id="cartaoStep1">
+    <h3>Pagamento com Cartão</h3>
+    <input placeholder="Número do cartão">
+    <input placeholder="Nome impresso">
+    <input placeholder="Validade">
+    <input placeholder="CVV">
+    <button class="gradient-btn" onclick="mostrarParcelas()">Continuar</button>
+    <button onclick="fechar()">Cancelar</button>
+  </div>
+
+  <div class="modal-content hidden" id="cartaoStep2">
+    <h3>Parcelamento</h3>
+
+    <div class="option">1x R$ 1.759,00 (sem juros)</div>
+    <div class="option">3x R$ 620,00</div>
+    <div class="option">6x R$ 330,00</div>
+    <div class="option">12x R$ 180,00</div>
+
+    <button class="gradient-btn">Pagar</button>
+    <button onclick="fechar()">Cancelar</button>
+  </div>
+</div>
+
+<script>
+function abrirPix() {
+  document.getElementById("pixModal").classList.remove("hidden");
+}
+
+function abrirCartao() {
+  document.getElementById("cartaoModal").classList.remove("hidden");
+}
+
+function fechar() {
+  document.querySelectorAll(".modal").forEach(m => m.classList.add("hidden"));
+  document.getElementById("cartaoStep1").classList.remove("hidden");
+  document.getElementById("cartaoStep2").classList.add("hidden");
+}
+
+function mostrarParcelas() {
+  document.getElementById("cartaoStep1").classList.add("hidden");
+  document.getElementById("cartaoStep2").classList.remove("hidden");
+}
+
+function pixVista() {
+  alert("Pix à vista selecionado");
+}
+
+function pixEntrada() {
+  alert("Pix com entrada selecionado");
+}
+
+function pixParcelado() {
+  alert("Pix parcelado selecionado");
+}
+</script>
 
 </body>
 </html>
