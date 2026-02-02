@@ -1,84 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal Acadêmico</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <main class="app">
+<main class="app">
 
-    <section class="header-card">
-      <p class="uni">UNIVERSIDADE UNIJORGE NOVO</p>
-      <div class="user">
-        <span class="icon">👤</span>
-        <strong>Olá, PEDRO !</strong>
-      </div>
-      <hr>
-      <a class="logout">Sair</a>
-    </section>
+  <section class="header-card">
+    <p class="uni">UNIVERSIDADE UNIJORGE NOVO</p>
+    <p class="user">👤 Olá, <strong>PEDRO</strong> !</p>
+    <hr>
+    <span class="logout">Sair</span>
+  </section>
 
-    <button class="btn-main">Minhas dívidas</button>
+  <button class="btn-main">Minhas dívidas</button>
 
-    <section class="debt-card">
-      <div class="debt-top">
-        <span class="dot"></span>
-        <span>Dívida em aberto</span>
-      </div>
+  <section class="debt-card">
+    <span class="status">● Dívida em aberto</span>
 
-      <div class="debt-value">
-        <span>R$</span>
-        <strong>1.759,00</strong>
-      </div>
-
-      <div class="debt-actions">
-        <button class="pay pix">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Pix_logo.svg">
-          Pix
-        </button>
-        <button class="pay credit">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Mastercard_2019_logo.svg">
-          Crédito
-        </button>
-      </div>
-    </section>
-
-    <button class="btn-main">Meus Acordos</button>
-
-    <section class="table-card">
-      <div class="table-header">
-        <span>Acordo</span>
-        <span>Status</span>
-        <span>Data</span>
-        <span>Total</span>
-      </div>
-
-      <div class="table-row">
-        <span>16619620</span>
-        <span>Quitado</span>
-        <span>02/12/2025</span>
-        <span>568,62</span>
-      </div>
-
-      <div class="table-row">
-        <span>16617533</span>
-        <span>Quitado</span>
-        <span>24/11/2025</span>
-        <span>595,33</span>
-      </div>
-    </section>
-
-    <div class="cards">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Mastercard_2019_logo.svg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo_%282018%29.svg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Diners_Club_Logo3.svg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/BoletoBancario.png">
+    <div class="price">
+      R$ <strong>1.759,00</strong>
     </div>
 
-  </main>
+    <div class="pay-buttons">
+      <button class="pay pix">Pix</button>
+      <button class="pay credit">Crédito</button>
+    </div>
+  </section>
+
+  <button class="btn-main">Meus Acordos</button>
+
+  <section class="table-card">
+    <div class="row header">
+      <span>Acordo</span>
+      <span>Status</span>
+      <span>Data</span>
+      <span>Total</span>
+    </div>
+
+    <div class="row">
+      <span>16619620</span>
+      <span>Quitado</span>
+      <span>02/12/2025</span>
+      <span>568,62</span>
+    </div>
+
+    <div class="row">
+      <span>16617533</span>
+      <span>Quitado</span>
+      <span>24/11/2025</span>
+      <span>595,33</span>
+    </div>
+  </section>
+
+  <div class="flags">
+    <span class="flag visa">VISA</span>
+    <span class="flag master">Mastercard</span>
+    <span class="flag amex">Amex</span>
+    <span class="flag diners">Diners</span>
+    <span class="flag boleto">Boleto</span>
+  </div>
+
+</main>
 
 </body>
 </html>
+
