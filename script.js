@@ -1,84 +1,59 @@
-const DIVIDA = 1759;
+const divida = 1759;
 
-// ================= PIX =================
-function confirmarPix() {
-  const opcao = document.querySelector('input[name="pixOpcao"]:checked');
+function abrirPix() {
+  document.getElementById("overlay").style.display = "flex";
+  document.getElementById("modalContent").innerHTML = `
+    <h3>Negociação via Pix</h3>
 
-  if (!opcao) {
-    alert("Escolha uma opção de pagamento via Pix");
-    return;
-  }
+    <button onclick="pixVista()">À vista (10% desconto)</button>
+    <button onclick="pixEntrada()">Com entrada</button>
+    <button onclick="pixParcelado()">Parcelado</button>
 
-  let resumo = "";
-
-  switch (opcao.value) {
-    case "vista":
-      const vista = DIVIDA * 0.9;
-      resumo = `
-Pagamento à vista via Pix
-Total: R$ ${vista.toFixed(2)}
-Desconto: 10%
-`;
-      break;
-
-    case "entrada":
-      const entrada = 300;
-      const parcelasEntrada = 3;
-      const restante = DIVIDA - entrada;
-      const valorParcelaEntrada = restante / parcelasEntrada;
-
-      resumo = `
-Pix com entrada
-Entrada: R$ ${entrada.toFixed(2)}
-${parcelasEntrada}x de R$ ${valorParcelaEntrada.toFixed(2)}
-Total: R$ ${DIVIDA.toFixed(2)}
-`;
-      break;
-
-    case "semEntrada6":
-      const parcelas6 = 6;
-      const total6 = DIVIDA * 1.08;
-      resumo = `
-Pix parcelado sem entrada
-${parcelas6}x de R$ ${(total6 / parcelas6).toFixed(2)}
-Juros: 8%
-Total: R$ ${total6.toFixed(2)}
-`;
-      break;
-
-    case "semEntrada12":
-      const parcelas12 = 12;
-      const total12 = DIVIDA * 1.23;
-      resumo = `
-Pix parcelado sem entrada
-${parcelas12}x de R$ ${(total12 / parcelas12).toFixed(2)}
-Juros: 23%
-Total: R$ ${total12.toFixed(2)}
-`;
-      break;
-  }
-
-  alert(resumo);
+    <br><br>
+    <button onclick="fechar()">Cancelar</button>
+  `;
 }
 
-// ================= CARTÃO =================
-function continuarCartao() {
-  document.getElementById("cartaoForm").classList.add("hidden");
-  document.getElementById("cartaoParcelas").classList.remove("hidden");
+function pixVista() {
+  const total = divida * 0.9;
+  alert("Total à vista: R$ " + total.toFixed(2));
 }
 
-function pagarCartao(parcelas) {
-  let juros = 1;
+function pixEntrada() {
+  const entrada = 300;
+  const restante = (divida - entrada) * 1.18;
+  alert(`Entrada: R$300\n3x de R$ ${(restante/3).toFixed(2)}`);
+}
 
-  if (parcelas > 1 && parcelas <= 6) juros = 1.05;
-  if (parcelas > 6) juros = 1.12;
+function pixParcelado() {
+  const parcelas = 6;
+  const total = divida * Math.pow(1.018, parcelas);
+  alert(`${parcelas}x de R$ ${(total/parcelas).toFixed(2)}`);
+}
 
-  const total = DIVIDA * juros;
-  const valorParcela = total / parcelas;
+function abrirCartao() {
+  document.getElementById("overlay").style.display = "flex";
+  document.getElementById("modalContent").innerHTML = `
+    <h3>Cartão de Crédito</h3>
 
-  alert(`
-Pagamento com Cartão
-${parcelas}x de R$ ${valorParcela.toFixed(2)}
-Total: R$ ${total.toFixed(2)}
-`);
+    <input placeholder="Número do cartão"><br><br>
+    <input placeholder="Nome impresso"><br><br>
+    <input placeholder="Validade"><br><br>
+    <input placeholder="CVV"><br><br>
+
+    <button onclick="parcelarCartao(6)">6x</button>
+    <button onclick="parcelarCartao(12)">12x</button>
+
+    <br><br>
+    <button onclick="fechar()">Cancelar</button>
+  `;
+}
+
+function parcelarCartao(n) {
+  const total = divida * Math.pow(1.025, n);
+  alert(`${n}x de R$ ${(total/n).toFixed(2)}`);
+}
+
+function fechar() {
+  document.getElementById("overlay").style.display = "none";
 }
