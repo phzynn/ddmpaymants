@@ -76,55 +76,44 @@ body {
 /* CARD DÍVIDA */
 .card {
   border-radius: 16px;
-  padding: 16px;
+  padding: 18px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
 .debt {
-  background: #eaffea;
+  background: rgba(255,255,255,0.45);
   text-align: center;
 }
 
 .label {
   font-size: 14px;
-  color: #2b7a2b;
+  color: #333;
 }
 
 .value {
   font-size: 22px;
   font-weight: bold;
-  color: #1f6b1f;
-  margin: 6px 0 14px;
+  margin: 8px 0 16px;
 }
 
 /* OPÇÕES DE PAGAMENTO */
 .pay-options {
   display: flex;
+  justify-content: center;
   gap: 12px;
 }
 
 .pay {
-  flex: 1;
-  padding: 10px;
-  border-radius: 20px;
+  padding: 8px 18px;
+  border-radius: 18px;
   border: none;
-  font-weight: bold;
   font-size: 14px;
-}
-
-.pix {
-  background: #00c4a7;
-  color: #fff;
-}
-
-.credit {
-  background: #4a6cff;
-  color: #fff;
+  background: #eee;
 }
 
 /* TABELA */
 .table {
-  background: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.7);
   border-radius: 16px;
   padding: 8px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
@@ -150,8 +139,10 @@ body {
 .brands {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 14px;
-  margin-top: 20px;
+  margin: 22px 0;
+  flex-wrap: wrap;
 }
 
 .brands img {
