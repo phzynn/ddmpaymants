@@ -14,7 +14,7 @@
     <h1>UNIVERSIDADE UNIJORGE NOVO</h1>
     <div class="user">
       <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png">
-      Olá, <strong>PEDRO</strong>!
+      Olá, <strong>PEDRO</strong> !
     </div>
     <div class="logout">Sair</div>
   </div>
@@ -23,80 +23,58 @@
 
   <div class="card">
     <div class="label">● Dívida em aberto</div>
-    <div class="value">R$ 1.759,00</div>
+    <div class="value">R$ <span id="valorDivida">1759.00</span></div>
 
     <div class="buttons">
-      <button class="pay-btn pix" onclick="abrirPix()">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Pix_logo.svg">
+      <button class="pay-btn" onclick="abrirPix()">
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888870.png">
         Pix
       </button>
 
-      <button class="pay-btn credito" onclick="abrirCredito()">
+      <button class="pay-btn" onclick="abrirCredito()">
         <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png">
-        Cartão de crédito
+        Crédito
       </button>
     </div>
   </div>
 
-</div>
+  <div class="section-title">Meus Acordos</div>
 
-<!-- MODAL PIX -->
-<div class="modal" id="modalPix">
-  <div class="modal-box">
-    <h2>Negociação via Pix</h2>
-
-    <table class="tabela">
+  <div class="card">
+    <table>
       <tr>
-        <th>Entrada</th>
-        <th>Parcelas</th>
-        <th>Valor Parcela</th>
+        <th>Acordo</th>
+        <th>Status</th>
+        <th>Data</th>
+        <th>Total</th>
       </tr>
-
-      <tr onclick="selecionar(this)">
-        <td>-</td>
-        <td>1x</td>
-        <td>R$ 1.583,10</td>
+      <tr>
+        <td>16619620</td>
+        <td class="ok">Quitado</td>
+        <td>02/12/2025</td>
+        <td>568,62</td>
       </tr>
-
-      <tr onclick="selecionar(this)">
-        <td>R$ 300,00</td>
-        <td>6x</td>
-        <td>R$ 315,00</td>
-      </tr>
-
-      <tr onclick="selecionar(this)">
-        <td>-</td>
-        <td>12x</td>
-        <td>R$ 180,00</td>
+      <tr>
+        <td>16617533</td>
+        <td class="ok">Quitado</td>
+        <td>24/11/2025</td>
+        <td>595,33</td>
       </tr>
     </table>
+  </div>
 
-    <button class="confirm">Confirmar Pix</button>
-    <button class="cancel" onclick="fecharPix()">Cancelar</button>
+  <div class="menu">
+    <div><img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png"></div>
+    <div><img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png"></div>
+    <div><img src="https://cdn-icons-png.flaticon.com/512/3135/3135673.png"></div>
+    <div><img src="https://cdn-icons-png.flaticon.com/512/839/839860.png"></div>
+    <div><img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"></div>
   </div>
 </div>
 
-<!-- MODAL CRÉDITO -->
-<div class="modal" id="modalCredito">
-  <div class="modal-box">
-    <h2>Pagamento com Cartão</h2>
-
-    <input type="text" placeholder="Número do cartão">
-    <input type="text" placeholder="Nome no cartão">
-    <input type="text" placeholder="Validade">
-    <input type="text" placeholder="CVV">
-
-    <select>
-      <option>1x sem juros</option>
-      <option>2x com juros</option>
-      <option>3x com juros</option>
-      <option>6x com juros</option>
-      <option>12x com juros</option>
-    </select>
-
-    <button class="confirm">Pagar</button>
-    <button class="cancel" onclick="fecharCredito()">Cancelar</button>
-  </div>
+<!-- MODAL -->
+<div class="overlay" id="overlay">
+  <div class="modal" id="modal"></div>
 </div>
 
 <script src="script.js"></script>
