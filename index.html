@@ -1,137 +1,49 @@
+HTML
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio - Pedro Henrique</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minhas Dívidas</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <ul>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
+  <div class="container">
+    <h2>Olá, Pedro!</h2>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Pedro Henrique</h1>
-    <p>Estudante de Ciência da Computação</p>
-  </header>
+    <button class="btn">Minhas dívidas</button>
 
-  <!-- SOBRE -->
-  <section id="sobre">
-    <h2>Sobre Mim</h2>
-    <p>
-      Me chamo Pedro Henrique, sou calouro em Ciência da Computação na Unijorge.
-      Estou iniciando no ramo de TI e buscando evoluir constantemente na área
-      de tecnologia.
-    </p>
-  </section>
-
-  <!-- PROJETOS -->
-  <section id="projetos">
-    <h2>Projetos</h2>
-    <div class="projetos-grid">
-
-      <div class="projeto-card">
-        <h3>Projeto Acadêmico</h3>
-        <p>Concluir a graduação e seguir carreira na área de TI.</p>
-      </div>
-
-      <div class="projeto-card">
-        <h3>Projeto Futuro</h3>
-        <p>Cursar Engenharia de Software após a graduação.</p>
-      </div>
-
+    <div class="card green">
+      <p>Dívida em aberto:</p>
+      <strong>R$ 1.759,00</strong>
     </div>
-  </section>
 
-  <!-- SERVIÇOS / VENDAS -->
-  <section id="servicos">
-    <h2>Serviços Acadêmicos (R$10)</h2>
-    <p>Serviços rápidos e acessíveis para facilitar sua vida na faculdade.</p>
+    <button class="btn" onclick="mostrarPagamento()">Pagar dívida</button>
 
-    <div class="projetos-grid">
-
-      <div class="projeto-card">
-        <h3>Resumo de Matérias</h3>
-        <p>Resumos organizados de conteúdos da faculdade (PDF ou Word).</p>
-        <strong>Valor: R$10</strong><br><br>
-        <a
-          href="https://api.whatsapp.com/send?phone=5571991115911&text=Olá!%20Quero%20comprar%20o%20serviço%20de%20Resumo%20de%20Matérias."
-          class="btn-comprar"
-          target="_blank"
-        >
-          Comprar
-        </a>
-      </div>
-
-      <div class="projeto-card">
-        <h3>Formatação ABNT</h3>
-        <p>Formatação de trabalhos acadêmicos nas normas ABNT.</p>
-        <strong>Valor: R$10</strong><br><br>
-        <a
-          href="https://api.whatsapp.com/send?phone=5571991115911&text=Olá!%20Quero%20comprar%20o%20serviço%20de%20Formatação%20ABNT."
-          class="btn-comprar"
-          target="_blank"
-        >
-          Comprar
-        </a>
-      </div>
-
-      <div class="projeto-card">
-        <h3>Slides para Apresentação</h3>
-        <p>Criação de slides simples, claros e organizados.</p>
-        <strong>Valor: R$10</strong><br><br>
-        <a
-          href="https://api.whatsapp.com/send?phone=5571991115911&text=Olá!%20Quero%20comprar%20o%20serviço%20de%20Slides%20para%20Apresentação."
-          class="btn-comprar"
-          target="_blank"
-        >
-          Comprar
-        </a>
-      </div>
-
-      <div class="projeto-card">
-        <h3>Ajuda em HTML e CSS</h3>
-        <p>Auxílio em trabalhos básicos de HTML e CSS para iniciantes.</p>
-        <strong>Valor: R$10</strong><br><br>
-        <a
-          href="https://api.whatsapp.com/send?phone=5571991115911&text=Olá!%20Quero%20comprar%20Ajuda%20em%20HTML%20e%20CSS."
-          class="btn-comprar"
-          target="_blank"
-        >
-          Comprar
-        </a>
-      </div>
-
+    <div id="pagamento" class="hidden">
+      <h3>Forma de pagamento</h3>
+      <button class="btn branco" onclick="mostrarPix()">Pix</button>
+      <button class="btn branco">Crédito</button>
     </div>
-  </section>
 
-  <!-- FACULDADE -->
-  <section id="faculdade">
-    <h2>Minha Faculdade</h2>
-    <img src="img/unijorge.jpeg" alt="Imagem da Unijorge" class="imagem-faculdade">
-  </section>
+    <div id="pix" class="hidden pix-box">
+      <h4>Opções no Pix</h4>
+      <div class="pix-option">À vista - R$ 1.759,00</div>
+      <div class="pix-option">Entrada + 2x</div>
+      <div class="pix-option">Entrada + 3x</div>
+    </div>
+  </div>
 
-  <!-- CONTATO -->
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Email: phenrique5801@email.com</p>
-    <p><strong>PIX:</strong> 71 991115911</p>
-  </section>
+  <script>
+    function mostrarPagamento() {
+      document.getElementById("pagamento").classList.remove("hidden");
+    }
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Pedro Henrique dos Santos</p>
-  </footer>
+    function mostrarPix() {
+      document.getElementById("pix").classList.remove("hidden");
+    }
+  </script>
 
 </body>
 </html>
