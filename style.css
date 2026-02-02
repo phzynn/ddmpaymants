@@ -2,143 +2,136 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #f3d9ff, #e6c8ff);
+  background: linear-gradient(135deg, #f2d9ff, #e7dcff);
   min-height: 100vh;
 }
 
-.app {
+.container {
   max-width: 420px;
   margin: auto;
-  padding: 15px;
+  padding: 20px 15px 100px;
 }
 
-.header {
-  background: #f6e9ff;
-  border-radius: 20px;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 20px;
+/* Cards */
+.card {
+  background: #f7f4ff;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-.sair {
+/* Header */
+.header h1 {
   font-size: 14px;
-  color: #555;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.titulo {
-  background: linear-gradient(90deg, #ff00cc, #7a00ff);
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.user img {
+  width: 28px;
+}
+
+.logout {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  color: #555;
+  text-decoration: none;
+}
+
+/* Section titles */
+.section-title {
+  background: linear-gradient(90deg, #ff00cc, #6a00ff);
   color: white;
   text-align: center;
-  padding: 12px;
+  padding: 14px;
   border-radius: 25px;
   font-weight: bold;
-  margin: 20px 0 10px;
+  margin-bottom: 14px;
 }
 
-.card {
-  background: #f9f9ff;
-  border-radius: 20px;
-  padding: 20px;
+/* Debt */
+.debt {
   text-align: center;
 }
 
-.status {
-  color: #7a00ff;
+.debt .status {
+  color: #6a00ff;
   font-weight: bold;
+  margin-bottom: 8px;
 }
 
-h1 {
-  margin: 10px 0 20px;
+.debt h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
 }
 
-.botoes {
+.buttons {
   display: flex;
-  gap: 15px;
   justify-content: center;
+  gap: 15px;
 }
 
 .btn {
-  background: #eef6ff;
+  padding: 10px 22px;
+  border-radius: 14px;
   border: none;
-  padding: 10px 20px;
-  border-radius: 15px;
   font-weight: bold;
   cursor: pointer;
 }
 
-table {
-  width: 100%;
-  margin-top: 10px;
-  border-collapse: collapse;
+.btn.light {
+  background: #e9f7ff;
+  color: #0077cc;
 }
 
-th, td {
-  padding: 8px;
+/* Table */
+.table .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 10px 0;
+  text-align: center;
   font-size: 14px;
 }
 
-.quitado {
+.header-row {
+  font-weight: bold;
+}
+
+.paid {
   color: green;
   font-weight: bold;
 }
 
-/* MODAL */
-#overlay {
+/* Bottom menu */
+.menu {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,.45);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-#modalContent {
-  background: #f7eaff;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
   width: 90%;
   max-width: 420px;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,.3);
+  border-radius: 22px;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-#modalContent h3 {
-  margin-bottom: 10px;
-}
-
-#modalContent label {
-  display: block;
-  margin-top: 10px;
-  text-align: left;
-}
-
-#modalContent input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  margin-top: 5px;
-}
-
-#modalContent button {
-  width: 100%;
-  margin-top: 15px;
-  padding: 12px;
-  border-radius: 25px;
-  border: none;
-  background: linear-gradient(90deg, #ff00cc, #7a00ff);
-  color: white;
-  font-weight: bold;
-}
-
-.cancelar {
-  background: #ddd !important;
-  color: #000 !important;
+.menu-item {
+  font-size: 22px;
 }
