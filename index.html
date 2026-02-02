@@ -1,93 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Universidade Unijorge Novo</title>
+  <title>Minhas Dívidas</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- TOPO -->
-  <header class="topo">
+<div class="container">
+
+  <div class="header">
     <h2>UNIVERSIDADE UNIJORGE NOVO</h2>
     <p>Olá, <strong>PEDRO</strong>!</p>
-    <a href="#">Sair</a>
-  </header>
+    <span>Sair</span>
+  </div>
 
-  <!-- CARD DÍVIDA -->
-  <section class="card divida">
-    <p class="status">● Dívida em aberto</p>
-    <h1>R$ 1.759,00</h1>
+  <div class="btn-main">Minhas dívidas</div>
 
-    <div class="botoes">
-      <button onclick="mostrarPix()">Pix</button>
-      <button onclick="mostrarCartao()">Cartão de crédito</button>
+  <div class="card">
+    <p class="dot">Dívida em aberto</p>
+    <h1>R$ <span id="valorDivida">1759.00</span></h1>
+
+    <div class="actions">
+      <button onclick="abrirPix()">Pix</button>
+      <button onclick="abrirCartao()">Cartão de crédito</button>
     </div>
-  </section>
+  </div>
 
-  <!-- ================= PIX ================= -->
-  <section id="pixBox" class="card hidden">
-    <h3>Negociação via Pix</h3>
-    <p>Escolha uma opção</p>
+  <div class="btn-main">Meus Acordos</div>
 
-    <label>
-      <input type="radio" name="pixOpcao" value="vista">
-      À vista: R$ 1.580,00 (10% desconto)
-    </label>
-
-    <label>
-      <input type="radio" name="pixOpcao" value="entrada">
-      Entrada R$ 300 + 3x de R$ 520
-    </label>
-
-    <label>
-      <input type="radio" name="pixOpcao" value="semEntrada6">
-      Sem entrada: 6x de R$ 315
-    </label>
-
-    <label>
-      <input type="radio" name="pixOpcao" value="semEntrada12">
-      12x de R$ 180 (juros)
-    </label>
-
-    <button class="gradient-btn" onclick="confirmarPix()">Confirmar Pix</button>
-    <button class="cancelar" onclick="fecharTudo()">Cancelar</button>
-  </section>
-
-  <!-- ================= CARTÃO ================= -->
-  <section id="cartaoBox" class="card hidden">
-
-    <!-- FORMULÁRIO -->
-    <div id="cartaoForm">
-      <h3>Pagamento com Cartão</h3>
-
-      <input type="text" placeholder="Número do cartão">
-      <input type="text" placeholder="Nome impresso no cartão">
-      <input type="text" placeholder="Validade (MM/AA)">
-      <input type="text" placeholder="CVV">
-
-      <button class="gradient-btn" onclick="continuarCartao()">Continuar</button>
-      <button class="cancelar" onclick="fecharTudo()">Cancelar</button>
-    </div>
-
-    <!-- PARCELAS -->
-    <div id="cartaoParcelas" class="hidden">
-      <h3>Escolha as parcelas</h3>
-
-      <button onclick="pagarCartao(1)">1x sem juros</button>
-      <button onclick="pagarCartao(3)">3x</button>
-      <button onclick="pagarCartao(6)">6x</button>
-      <button onclick="pagarCartao(12)">12x</button>
-
-      <button class="cancelar" onclick="fecharTudo()">Cancelar</button>
-    </div>
-  </section>
-
-  <!-- ================= ACORDOS ================= -->
-  <section class="card">
-    <h3>Meus Acordos</h3>
-
+  <div class="card">
     <table>
       <tr>
         <th>Acordo</th>
@@ -97,40 +39,26 @@
       </tr>
       <tr>
         <td>16619620</td>
-        <td class="quitado">Quitado</td>
+        <td class="ok">Quitado</td>
         <td>02/12/2025</td>
-        <td>R$ 568,62</td>
+        <td>568,62</td>
       </tr>
       <tr>
         <td>16617533</td>
-        <td class="quitado">Quitado</td>
+        <td class="ok">Quitado</td>
         <td>24/11/2025</td>
-        <td>R$ 595,33</td>
+        <td>595,33</td>
       </tr>
     </table>
-  </section>
+  </div>
 
-  <script src="script.js"></script>
+</div>
 
-  <!-- CONTROLE DE TELAS -->
-  <script>
-    function mostrarPix() {
-      fecharTudo();
-      document.getElementById("pixBox").classList.remove("hidden");
-    }
+<!-- MODAL -->
+<div id="overlay" class="overlay">
+  <div class="modal" id="modalContent"></div>
+</div>
 
-    function mostrarCartao() {
-      fecharTudo();
-      document.getElementById("cartaoBox").classList.remove("hidden");
-    }
-
-    function fecharTudo() {
-      document.getElementById("pixBox").classList.add("hidden");
-      document.getElementById("cartaoBox").classList.add("hidden");
-      document.getElementById("cartaoParcelas").classList.add("hidden");
-      document.getElementById("cartaoForm").classList.remove("hidden");
-    }
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>
