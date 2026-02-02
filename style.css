@@ -5,10 +5,9 @@
 
 body {
   margin: 0;
-  background: #eee;
 }
 
-/* FUNDO IGUAL AO APP */
+/* FUNDO */
 .bg {
   position: fixed;
   inset: 0;
@@ -19,7 +18,7 @@ body {
   z-index: -1;
 }
 
-/* CONTAINER MOBILE */
+/* CONTAINER */
 .container {
   max-width: 360px;
   margin: 0 auto;
@@ -29,7 +28,7 @@ body {
 /* HEADER */
 .header {
   background: rgba(255,255,255,0.45);
-  border-radius: 16px;
+  border-radius: 18px;
   padding: 16px;
   text-align: center;
   backdrop-filter: blur(6px);
@@ -38,7 +37,6 @@ body {
 .uni {
   font-size: 12px;
   opacity: 0.7;
-  margin-bottom: 10px;
 }
 
 .user {
@@ -46,10 +44,7 @@ body {
   justify-content: center;
   gap: 8px;
   font-size: 16px;
-}
-
-.icon {
-  font-size: 18px;
+  margin-top: 6px;
 }
 
 .line {
@@ -59,43 +54,78 @@ body {
 }
 
 .logout {
-  color: #555;
   font-size: 14px;
   text-decoration: none;
+  color: #555;
 }
 
-/* BOTÕES ROSA/ROXO */
+/* BOTÕES PRINCIPAIS */
 .btn-grad {
   width: 100%;
-  margin: 16px 0;
-  padding: 12px;
-  font-size: 14px;
+  margin: 18px 0 12px;
+  padding: 13px;
+  font-size: 15px;
   font-weight: bold;
   color: #fff;
   border: none;
-  border-radius: 20px;
+  border-radius: 24px;
   background: linear-gradient(90deg, #ff00b8, #7a2cff);
   box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
-/* CARD VERDE */
+/* CARD DÍVIDA */
 .card {
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 16px;
-  text-align: center;
-  font-size: 14px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
-.green {
-  background: #dff5df;
+.debt {
+  background: #eaffea;
+  text-align: center;
+}
+
+.label {
+  font-size: 14px;
   color: #2b7a2b;
+}
+
+.value {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1f6b1f;
+  margin: 6px 0 14px;
+}
+
+/* OPÇÕES DE PAGAMENTO */
+.pay-options {
+  display: flex;
+  gap: 12px;
+}
+
+.pay {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.pix {
+  background: #00c4a7;
+  color: #fff;
+}
+
+.credit {
+  background: #4a6cff;
+  color: #fff;
 }
 
 /* TABELA */
 .table {
-  background: rgba(255,255,255,0.6);
-  border-radius: 12px;
+  background: rgba(255,255,255,0.65);
+  border-radius: 16px;
   padding: 8px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
@@ -103,8 +133,8 @@ body {
 .thead, .row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  font-size: 12px;
-  padding: 6px;
+  padding: 8px;
+  font-size: 13px;
 }
 
 .thead {
@@ -120,9 +150,8 @@ body {
 .brands {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
   margin-top: 20px;
-  flex-wrap: wrap;
 }
 
 .brands img {
