@@ -1,119 +1,62 @@
-/* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* ===== BODY ===== */
+CSS
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f4f4;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f7b2ff, #b8f3ff);
+}
+
+.container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #ff2ec4, #7a2cff);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.branco {
+  background: white;
   color: #333;
-  line-height: 1.6;
+  border: 1px solid #ddd;
 }
 
-/* ===== NAVBAR ===== */
-nav {
-  background-color: #222;
-  padding: 10px 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-nav a:hover {
-  background-color: #00bfff;
-  color: #000;
-}
-
-/* ===== HEADER ===== */
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 80px 20px 30px;
-  text-align: center;
-}
-
-/* ===== SECTIONS ===== */
-section {
-  max-width: 1100px;
-  margin: 20px auto;
+.card {
   padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
+  margin: 15px 0;
+  font-size: 18px;
 }
 
-/* ===== GRID ===== */
-.projetos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+.green {
+  background: #dff5df;
+  color: #1f7a1f;
 }
 
-/* ===== CARD ===== */
-.projeto-card {
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.hidden {
+  display: none;
 }
 
-.projeto-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-  background-color: #e6e6e6;
-}
-
-/* ===== BOTÃO COMPRAR ===== */
-.btn-comprar {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #25d366;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn-comprar:hover {
-  background-color: #1ebe5d;
-}
-
-/* ===== IMAGEM FACULDADE ===== */
-.imagem-faculdade {
-  width: 100%;
-  max-width: 800px;
-  display: block;
-  margin: 20px auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
+.pix-box {
+  background: white;
   padding: 15px;
-  background-color: #ddd;
-  margin-top: 20px;
+  border-radius: 12px;
+  margin-top: 10px;
 }
+
+.pix-option {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
