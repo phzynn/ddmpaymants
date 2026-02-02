@@ -1,132 +1,77 @@
-* {
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Acadêmico</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-  margin: 0;
-  background: #eee;
-}
+  <div class="bg"></div>
 
-/* FUNDO IGUAL AO APP */
-.bg {
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at top left, #ffd6ef, transparent 45%),
-    radial-gradient(circle at bottom right, #c8f6ff, transparent 45%),
-    linear-gradient(135deg, #f1b6ff, #c9f7ff);
-  z-index: -1;
-}
+  <main class="container">
 
-/* CONTAINER MOBILE */
-.container {
-  max-width: 360px;
-  margin: 0 auto;
-  padding: 14px;
-}
+    <header class="header">
+      <p class="uni">UNIVERSIDADE UNIJORGE NOVO</p>
 
-/* HEADER */
-.header {
-  background: rgba(255,255,255,0.45);
-  border-radius: 16px;
-  padding: 16px;
-  text-align: center;
-  backdrop-filter: blur(6px);
-}
+      <div class="user">
+        <span class="icon">👤</span>
+        <span>Olá, <strong>PEDRO</strong> !</span>
+      </div>
 
-.uni {
-  font-size: 12px;
-  opacity: 0.7;
-  margin-bottom: 10px;
-}
+      <div class="line"></div>
 
-.user {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  font-size: 16px;
-}
+      <a href="#" class="logout">Sair</a>
+    </header>
 
-.icon {
-  font-size: 18px;
-}
+    <button class="btn-grad">Minhas dívidas</button>
 
-.line {
-  height: 1px;
-  background: #ddd;
-  margin: 12px 0;
-}
+    <div class="card green">
+      <p>Não há dívidas para negociar online!</p>
+    </div>
 
-.logout {
-  color: #555;
-  font-size: 14px;
-  text-decoration: none;
-}
+    <button class="btn-grad">Meus Acordos</button>
 
-/* BOTÕES ROSA/ROXO */
-.btn-grad {
-  width: 100%;
-  margin: 16px 0;
-  padding: 12px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #ff00b8, #7a2cff);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-}
+    <div class="table">
+      <div class="thead">
+        <span>Acordo</span>
+        <span>Status</span>
+        <span>Data</span>
+        <span>Total</span>
+      </div>
 
-/* CARD VERDE */
-.card {
-  border-radius: 12px;
-  padding: 16px;
-  text-align: center;
-  font-size: 14px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
+      <div class="row">
+        <span>16631627</span>
+        <span>Quitado</span>
+        <span>08/01/2026</span>
+        <span>1.129,47</span>
+      </div>
 
-.green {
-  background: #dff5df;
-  color: #2b7a2b;
-}
+      <div class="row">
+        <span>16619620</span>
+        <span>Quitado</span>
+        <span>02/12/2025</span>
+        <span>568,62</span>
+      </div>
 
-/* TABELA */
-.table {
-  background: rgba(255,255,255,0.6);
-  border-radius: 12px;
-  padding: 8px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
+      <div class="row">
+        <span>16617533</span>
+        <span>Quitado</span>
+        <span>24/11/2025</span>
+        <span>595,33</span>
+      </div>
+    </div>
 
-.thead, .row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  font-size: 12px;
-  padding: 6px;
-}
+    <div class="brands">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo_%282018%29.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Elo_logo.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Diners_Club_Logo.svg">
+    </div>
 
-.thead {
-  font-weight: bold;
-  color: #555;
-}
+  </main>
 
-.row {
-  border-top: 1px solid #ddd;
-}
-
-/* BANDEIRAS */
-.brands {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-.brands img {
-  height: 22px;
-}
-
-
+</body>
+</html>
