@@ -1,155 +1,109 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f6d7ff, #e6ddff);
+  background: linear-gradient(135deg, #f3d9ff, #e9e0ff);
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 40px 0;
 }
 
 .app {
-  width: 100%;
-  max-width: 420px;
+  width: 360px;
 }
 
-/* ===== HEADER ===== */
-.header {
-  background: #f4ebff;
-  border-radius: 18px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  margin-bottom: 18px;
-}
-
-.header h1 {
-  font-size: 14px;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-}
-
-.user {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.user img {
-  width: 26px;
-}
-
-.logout {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #555;
-}
-
-/* ===== TITULOS ===== */
-.section-title {
-  background: linear-gradient(90deg, #ff00cc, #7a00ff);
-  color: #fff;
-  padding: 14px;
-  border-radius: 30px;
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 14px;
-}
-
-/* ===== CARD ===== */
+/* CARD */
 .card {
-  background: #f7f5ff;
-  border-radius: 18px;
-  padding: 22px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  margin-bottom: 20px;
+  background: #f7f7ff;
+  border-radius: 20px;
+  padding: 25px;
   text-align: center;
 }
 
-.label {
-  color: #7a00ff;
-  font-weight: 600;
-  margin-bottom: 10px;
+.status {
+  color: purple;
+  font-weight: bold;
 }
 
-.value {
-  font-size: 34px;
-  font-weight: 800;
-  margin-bottom: 18px;
+h1 {
+  margin: 15px 0;
 }
 
-/* ===== BOTÕES ===== */
 .buttons {
   display: flex;
+  gap: 10px;
   justify-content: center;
-  gap: 16px;
 }
 
 .pay-btn {
-  background: #e9f7ff;
+  background: #e8f7ff;
+  border-radius: 15px;
+  padding: 10px 15px;
   border: none;
-  border-radius: 25px;
-  padding: 10px 22px;
   display: flex;
   align-items: center;
   gap: 8px;
-  font-weight: 600;
-  color: #0077ff;
   cursor: pointer;
 }
 
 .pay-btn img {
-  width: 22px;
+  width: 24px;
 }
 
-/* ===== TABELA ===== */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
+/* ESCONDE INPUT */
+#pix-toggle {
+  display: none;
 }
 
-th {
-  text-align: left;
-  padding-bottom: 10px;
+/* PROPOSTA */
+.proposal {
+  display: none;
+  background: #fff;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 20px;
 }
 
-td {
-  padding: 8px 0;
+#pix-toggle:checked ~ .proposal {
+  display: block;
 }
 
-.ok {
-  color: green;
+.subtitle {
+  margin-top: 15px;
   font-weight: bold;
 }
 
-/* ===== MENU ===== */
-.menu {
+.options {
   display: flex;
-  justify-content: space-around;
-  margin-top: 18px;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-.menu div {
-  background: #fff;
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+.options label {
+  background: #f2f2ff;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
-.menu img {
-  width: 26px;
+.confirm {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(to right, #ff00cc, #7a00ff);
+  color: white;
+  font-size: 16px;
 }
 
+.cancel {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #888;
+  cursor: pointer;
+}
